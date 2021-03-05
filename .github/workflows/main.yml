@@ -13,3 +13,14 @@ jobs:
       - uses: cmgriffing/scully-gh-pages-action@v9
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
+
+  notify:
+    name: Line Notify
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: snow-actions/line-notify@v1.0.0
+        with:
+          access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
+          message: |
+            Build Success! https://shang-ting.github.io/scullyio-blog
