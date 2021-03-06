@@ -19,7 +19,8 @@ declare var ng: any;
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class BlogComponent implements OnInit {
-  post$ = defer(() => this.scullyRoutesService.getCurrent());
+  readonly originUrl = window.location.origin;
+  readonly currentPost$ = defer(() => this.scullyRoutesService.getCurrent());
   @ViewChild('header', { static: true }) headerEl: ElementRef;
   @ViewChild('progress', { static: true }) progressEl: ElementRef;
 
