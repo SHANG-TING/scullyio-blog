@@ -26,14 +26,15 @@ ng add @angular-architects/module-federation --project=mf-app1 --port=4201
 
 - Active webpack 5
 
-    - Modify ./package.json
-    ```json
-    "resolutions": {
-        "webpack": "^5.0.0"
-    },
-    ```
-    - Currently, you can only use `yarn install` because npm does not yet support resolutions properties.
-     
+  - Modify ./package.json
+
+  ```json
+  "resolutions": {
+      "webpack": "^5.0.0"
+  },
+  ```
+
+  - Currently, you can only use `yarn install` because npm does not yet support resolutions properties.
 
 ## Generate p0001 module and p0001 component
 
@@ -43,6 +44,7 @@ ng g c p0001 --skip-selector --project=mf-app1
 ```
 
 - Modify ./projects/mf-app1/src/app/p0001/p0001-routing.module.ts
+
 ```typescript
 import { P0001Component } from './p0001.component';
 
@@ -77,6 +79,7 @@ const routes: Routes = [
 ## Set the moduleFederationPlugin for mfdemo1
 
 - Modify ./projects/mfdemo1/webpack.config.js
+
 ```javascript
   plugins: [
     new ModuleFederationPlugin({
@@ -101,6 +104,7 @@ declare module 'mfapp1-remote/p0001.module';
 > Avoiding typescript warnings
 
 - Modify ./projects/mfdemo1/src/app/app-routing.module.ts
+
 ```typescript
 const routes: Routes = [
   {
@@ -112,6 +116,7 @@ const routes: Routes = [
 ```
 
 - Modify ./projects/mfdemo1/src/app/app.component.html
+
 ```html
 <h1>{{ title }}</h1>
 <router-outlet></router-outlet>

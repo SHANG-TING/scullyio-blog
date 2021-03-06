@@ -1,7 +1,6 @@
 import { defer } from 'rxjs';
 import { ScullyRoutesService } from '@scullyio/ng-lib';
 import {
-  AfterViewChecked,
   Component,
   ElementRef,
   HostListener,
@@ -9,8 +8,6 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute, Router, ROUTES } from '@angular/router';
-import { HighlightService } from '../highlight.service';
 
 declare var ng: any;
 
@@ -21,7 +18,7 @@ declare var ng: any;
   preserveWhitespaces: true,
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class BlogComponent implements OnInit, AfterViewChecked {
+export class BlogComponent implements OnInit {
   post$ = defer(() => this.scullyRoutesService.getCurrent());
   @ViewChild('header', { static: true }) headerEl: ElementRef;
   @ViewChild('progress', { static: true }) progressEl: ElementRef;
@@ -55,12 +52,6 @@ export class BlogComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {}
-  ngAfterViewChecked(): void {
-    this.highlightService.highlightAll();
-  }
 
-  constructor(
-    private highlightService: HighlightService,
-    private scullyRoutesService: ScullyRoutesService
-  ) {}
+  constructor(private scullyRoutesService: ScullyRoutesService) {}
 }

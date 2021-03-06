@@ -136,9 +136,11 @@
       <!--Post Content-->
 
       <!-- This is where Scully will inject the static HTML -->
-      <scully-content></scully-content>
+      <article class="prose prose-sm sm:prose lg:prose-lg">
+        <scully-content></scully-content>
+      </article>
 
-      <pre>{{ post$ | async | json }}</pre>
+      <!-- <pre>{{ post$ | async | json }}</pre> -->
 
       <!--/ Post Content-->
     </div>
