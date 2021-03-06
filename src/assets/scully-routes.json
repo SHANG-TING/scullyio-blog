@@ -1,1 +1,35 @@
-[{"route":"/blog/2021-03-05-blog","title":"2021-03-05-blog","description":"blog description","published":true,"slugs":["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],"sourceFile":"2021-03-05-blog.md"},{"route":"/blog/___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal","title":"2021-03-05-blog","description":"blog description","published":true,"slugs":["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],"sourceFile":"2021-03-05-blog.md"},{"route":"/blog/micro-frontend","title":"micro-frontend","description":"blog description","published":true,"slugs":["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],"sourceFile":"micro-frontend.md"},{"route":"/blog/___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal","title":"micro-frontend","description":"blog description","published":true,"slugs":["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],"sourceFile":"micro-frontend.md"}]
+[
+  { "route": "/" },
+  {
+    "route": "/blog/2021-03-05-blog",
+    "title": "2021-03-05-blog",
+    "description": "blog description",
+    "published": true,
+    "slugs": ["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],
+    "sourceFile": "2021-03-05-blog.md"
+  },
+  {
+    "route": "/blog/___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal",
+    "title": "2021-03-05-blog",
+    "description": "blog description",
+    "published": true,
+    "slugs": ["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],
+    "sourceFile": "2021-03-05-blog.md"
+  },
+  {
+    "route": "/blog/micro-frontend",
+    "title": "micro-frontend",
+    "description": "blog description",
+    "published": true,
+    "slugs": ["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],
+    "sourceFile": "micro-frontend.md"
+  },
+  {
+    "route": "/blog/___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal",
+    "title": "micro-frontend",
+    "description": "blog description",
+    "published": true,
+    "slugs": ["___UNPUBLISHED___klwo62es_VjpqDcSPKqyfYkX4ACRWFI3nNqGipdal"],
+    "sourceFile": "micro-frontend.md"
+  }
+]
