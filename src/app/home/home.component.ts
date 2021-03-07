@@ -10,7 +10,6 @@ import { filter, map, switchMap, tap, toArray } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   posts$ = defer(() => this.scullyRoutesService.allRoutes$).pipe(
-    tap(console.log),
     map((posts) => posts.filter((post) => post?.published))
   );
 
