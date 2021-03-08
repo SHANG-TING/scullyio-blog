@@ -25,4 +25,4 @@ jobs:
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
           message: |
-            Build Success! https://shang-ting.github.io/scullyio-blog
+            Build Success! https://scullyio-blog.gofa.cloud
