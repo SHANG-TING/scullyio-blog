@@ -32,7 +32,7 @@ published: true
 ### 第二種情況
 
 - 康威定律
-  <https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E5%AE%9A%E5%BE%8B>
+  <https://zh.wikipedia.org/wiki/康威定律>
 
 > 設計系統的架構受制於產生這些設計的組織的溝通結構
 
