@@ -18,7 +18,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.scullyRoutesService
       .getCurrent()
       .pipe(
-        filter((post) => !!post),
         takeUntil(this.destroy$)
       )
       .subscribe((post) => {
