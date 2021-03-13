@@ -1,8 +1,9 @@
-import { ScullyRoutesService } from '@scullyio/ng-lib';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
 import { Meta, Title } from '@angular/platform-browser';
+import { ScullyRoutesService } from '@scullyio/ng-lib';
+import { Subject } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
+import { Post } from './data/models';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.scullyRoutesService
       .getCurrent()
       .pipe(
+        map((post) => post as Post),
         takeUntil(this.destroy$)
       )
       .subscribe((post) => {

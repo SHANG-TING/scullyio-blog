@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* include CSS for prism plugins */
+@import '~prismjs/plugins/autolinker/prism-autolinker.css';
+@import '~prismjs/plugins/inline-color/prism-inline-color.css';
+@import '~prismjs/plugins/line-numbers/prism-line-numbers.css';
+@import '~prismjs/plugins/toolbar/prism-toolbar.css';
+/* check node_modules/prismjs/themes/ for the available themes */
+@import '~prismjs/themes/prism';
+
+.toolbar {
+  .toolbar-item + .toolbar-item {
+    margin-left: 0.5rem;
+  }
+}

@@ -1,3 +1,4 @@
+import { HighlightService } from './../highlight.service';
 import { defer } from 'rxjs';
 import { ScullyRoutesService } from '@scullyio/ng-lib';
 import {
@@ -19,10 +20,13 @@ declare var ng: any;
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class BlogComponent implements OnInit {
+  @ViewChild('header', { static: true })
+  headerEl!: ElementRef<HTMLDivElement>;
+  @ViewChild('progress', { static: true })
+  progressEl!: ElementRef<HTMLDivElement>;
+
   readonly originUrl = window.location.origin;
   readonly currentPost$ = defer(() => this.scullyRoutesService.getCurrent());
-  @ViewChild('header', { static: true }) headerEl: ElementRef;
-  @ViewChild('progress', { static: true }) progressEl: ElementRef;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -53,6 +57,12 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {}
+  ngAfterViewChecked(): void {
+    this.highlightService.highlightAll();
+  }
 
-  constructor(private scullyRoutesService: ScullyRoutesService) {}
+  constructor(
+    private highlightService: HighlightService,
+    private scullyRoutesService: ScullyRoutesService
+  ) {}
 }
