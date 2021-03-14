@@ -1,6 +1,5 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 
-setPluginConfig('md', { enableSyntaxHighlighting: true });
 export const config: ScullyConfig = {
   projectRoot: "./src",
   projectName: "scullyio-blog",
@@ -10,7 +9,8 @@ export const config: ScullyConfig = {
       type: 'contentFolder',
       slug: {
         folder: "./blog"
-      }
+      },
+      postRenderers: ['lazyImages']
     },
   }
 };

@@ -1,6 +1,9 @@
 ---
 title: Micro frontend with angular 11 and webpack 5
-tags: angular, webpack, micro-frontend
+tags: 
+  - angular
+  - webpack
+  - micro-frontend
 description: 實作過程的紀錄 & 備忘錄
 image: https://i.morioh.com/3c297c0b7a.png
 author: 謝尚庭 Neil

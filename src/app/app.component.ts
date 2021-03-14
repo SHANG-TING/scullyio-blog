@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ScullyRoutesService } from '@scullyio/ng-lib';
 import { Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil, tap } from 'rxjs/operators';
 import { Post } from './data/models';
 
 @Component({
@@ -23,8 +23,8 @@ export class AppComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$)
       )
       .subscribe((post) => {
-        this.title.setTitle(post.title);
-        // this.meta.updateTag({}, '');
+        const postTitle = post ? post.title : 'Scullyio Blog';
+        this.title.setTitle(postTitle);
       });
   }
 

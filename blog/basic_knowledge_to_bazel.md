@@ -1,6 +1,7 @@
 ---
 title: 'Bazel 的基本認識'
-tags: bazel
+tags: 
+  - bazel
 description: 瞭解 Bazel 是什麼？ Bazel 的定位是什麼？ Bazel 具有什麼優勢？
 image: https://bazel.build/images/bazel-og-image.png
 author: 謝尚庭 Neil

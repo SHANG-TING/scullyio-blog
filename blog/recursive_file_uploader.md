@@ -1,8 +1,10 @@
 ---
 title: '透過 JavaScript 實現遞迴取得檔案資訊'
-tags: javascript
+tags: 
+  - javascript
 description: 透過 File System Access API 來實作此功能，以及同時也嘗試透過 透過 File and Directory Entries API 提供的 DataTransferItem.webkitGetAsEntry() 來實作
 author: 謝尚庭 Neil
+image: https://cdn.pixabay.com/photo/2016/08/31/13/19/files-1633406_960_720.jpg
 published: true
 ---
 

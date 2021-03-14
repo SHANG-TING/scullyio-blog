@@ -1,8 +1,11 @@
 ---
 title: '簡單建立一個基於 Angular 專案的 Chrome Extension'
-tags: angular, chrome-extension
+tags: 
+  - angular
+  - chrome-extension
 description: 透過 Angular CLI 幫我們產生專案，再手動加入 manifest.json，且透過 ng build 建置與打包程式碼並上傳到 chrome://extensions 的未封裝項目上
 author: 謝尚庭 Neil
+image: https://i.imgur.com/QnTNt0B.png
 published: true
 ---
 

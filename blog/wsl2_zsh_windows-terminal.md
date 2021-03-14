@@ -1,6 +1,9 @@
 ---
 title: 'WSL2, zsh, windows terminal'
-tags: wsl, zsh, windows-terminal
+tags: 
+  - wsl
+  - zsh
+  - windows-terminal
 description: 實作過程的紀錄 & 備忘錄
 image: https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
 author: 謝尚庭 Neil

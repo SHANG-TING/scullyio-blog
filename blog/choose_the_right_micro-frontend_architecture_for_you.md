@@ -2,7 +2,9 @@
 title: 選擇適合自己的微前端架構
 description: 微前端是一種 `Web 開發技術`：是一種 `SOA 架構模式`的變體，它將一個應用分解成一組鬆耦合的服務，在微前端架構中，服務之間它是`細粒度`的，並且它們之間的協議是`輕量級`的，由於將一個應用拆分成一些小的服務，使得它們易於理解、開發、測試，這樣能夠讓不同團隊獨立開發、部署、拓展他們的服務，這是微服務一個很重要的概念。
 image: https://i.imgur.com/XMEbuEt.png
-tags: angular, micro-frontend
+tags: 
+  - angular
+  - micro-frontend
 author: 謝尚庭 Neil
 published: true
 ---
