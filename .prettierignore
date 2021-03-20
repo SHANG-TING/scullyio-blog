@@ -1,0 +1,11 @@
+#Ignore artifacts
+build
+coverage
+e2e
+node_modules
+
+# Ignore all SPEC files:
+*.spec.ts
+
+# Ignore sub modules
+projects/ngxf-uploader

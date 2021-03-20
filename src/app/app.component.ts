@@ -6,14 +6,14 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 import { Post } from './data/models';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  blogTitle = 'Scullyio Blog';
+	blogTitle = 'Scullyio Blog';
 
-  private destroy$ = new Subject<any>();
+	private destroy$ = new Subject<any>();
 
   ngOnInit(): void {
     this.scullyRoutesService
@@ -28,14 +28,14 @@ export class AppComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
+	ngOnDestroy(): void {
+		this.destroy$.next();
+		this.destroy$.complete();
+	}
 
-  constructor(
-    private title: Title,
-    private meta: Meta,
-    private scullyRoutesService: ScullyRoutesService
-  ) {}
+	constructor(
+		private title: Title,
+		private meta: Meta,
+		private scullyRoutesService: ScullyRoutesService
+	) {}
 }

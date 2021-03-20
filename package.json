@@ -12,7 +12,9 @@
     "scully": "npx scully",
     "scully:serve": "npx scully serve",
     "scully:watch": "npx scully --watch",
-    "scully:scan": "npx scully --scan"
+    "scully:scan": "npx scully --scan",
+    "prettier:fix": "npx prettier .prettierrc --write \"./src/{app,environments}/**/*{.ts,.html,.scss}\" \"./projects/**/src/lib/**/*{.ts,.html,.scss}\"",
+    "prettier:verify": "npx prettier .prettierrc --list-different \"./src/{app,environments}/**/*{.ts,.html,.scss}\" \"./projects/**/src/lib/**/*{.ts,.html,.scss}\""
   },
   "private": true,
   "dependencies": {
@@ -48,6 +50,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "ng-packagr": "^11.0.0",
+    "prettier": "^2.2.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

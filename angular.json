@@ -141,7 +141,7 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngxf-uploader/tsconfig.lib.prod.json"
+              "project": "projects/ngxf-uploader/ng-package.prod.json"
             }
           }
         },

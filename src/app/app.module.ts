@@ -7,16 +7,9 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ScullyLibModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, HomeComponent],
+	imports: [BrowserModule, AppRoutingModule, ScullyLibModule],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
