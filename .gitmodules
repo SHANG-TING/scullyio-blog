@@ -1,0 +1,3 @@
+[submodule "projects/ngxf-uploader"]
+	path = projects/ngxf-uploader
+	url = https://github.com/SHANG-TING/ngxf-uploader.git
