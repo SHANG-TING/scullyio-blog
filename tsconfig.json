@@ -17,7 +17,13 @@
       "dom"
     ],
     "paths": {
-      "@app/*": ["src/app/*"]
+      "@app/*": [
+        "src/app/*"
+      ],
+      "ngxf-uploader": [
+        "dist/ngxf-uploader/ngxf-uploader",
+        "dist/ngxf-uploader"
+      ]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
