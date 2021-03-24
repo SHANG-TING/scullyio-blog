@@ -60,7 +60,7 @@ export class AppComponent implements AfterViewInit {
 
 ## 第二種寫法
 
-Compiler 有 `compileModulesAndComponents` 兩種方法，這提供我們指定　Module1 所引用到的 Components (M1comp1Component、M1comp2Component) 的 `ComponentFactories` (ComponentFactory Array)。
+Compiler 有 `compileModulesAndComponents` 兩種方法，這提供我們取得到　Module1 所引用到的 Components (M1comp1Component、M1comp2Component) 的 `ComponentFactories` (ComponentFactory Array)。
 
 這也就是說連 ComponentType 都不用知道，因此也不需要寫 *import { M1comp1Component } from './module1/m1comp1.component';* 這樣的程式碼來得知 ComponentType。
 
