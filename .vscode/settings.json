@@ -8,11 +8,13 @@
     "dragenter",
     "dragleave",
     "dragover",
+    "filepicker",
     "gofa",
     "okaidia",
     "prettierrc",
     "prismjs",
     "scully",
-    "scullyio"
+    "scullyio",
+    "webkitdirectory"
   ]
 }

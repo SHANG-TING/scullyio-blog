@@ -2,7 +2,7 @@
 title: '透過 JavaScript 實現遞迴取得檔案資訊'
 tags: 
   - javascript
-description: 透過 File System Access API 來實作此功能，以及同時也嘗試透過 透過 File and Directory Entries API 提供的 DataTransferItem.webkitGetAsEntry() 來實作
+description: 透過 File System Access API 來實作此功能，也透過 File and Directory Entries API 提供的 DataTransferItem.webkitGetAsEntry() 來實作，最後嘗試在 input element 加入　webkitdirectory 屬性來實現其功能。
 author: 謝尚庭 Neil
 image: https://cdn.pixabay.com/photo/2016/08/31/13/19/files-1633406_960_720.jpg
 published: true
@@ -142,11 +142,47 @@ const dirReadEntries = (dirReader, path) => {
 </html>
 ```
 
-#### 請自己玩玩看範例~
+### Demo
 
 <iframe width="100%" height="450px" src="https://stackblitz.com/edit/drag-transfer-items?embed=1&file=index.js"></iframe>
+
+## 方法三、透過在 input element 加入 [webkitdirectory](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-webkitdirectory) 屬性，來取得指定資料夾下的所有檔案
+
+在指定資料夾中的每個 File 物件都會有 [webkitRelativePath](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory) 屬性，會提供 File 物件在指定資料夾內的相對路徑 (*src/app/app.component.ts*)。
+
+### HTML
+
+```html
+<input type="file" id="filepicker" name="fileList" webkitdirectory multiple />
+<ul id="listing"></ul>
+```
+
+### JavaScript
+
+```javascript
+document.getElementById("filepicker").addEventListener("change", function(event) {
+  let output = document.getElementById("listing");
+  let files = event.target.files;
+
+  for (let i=0; i<files.length; i++) {
+    let item = document.createElement("li");
+    item.innerHTML = files[i].webkitRelativePath;
+    output.appendChild(item);
+  };
+}, false);
+```
+
+### Result
+
+<iframe id="webkitdirectory_example" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/API/HTMLInputElement/webkitdirectory/_samples_/Example" loading="lazy"></iframe>
+
+
+### 心得
+
+  不在意 IE 的情況下，可以大膽同時使用第二、三種的上傳檔案方式，可以讓上傳功能更強大。
 
 ## 參考資料
 
 - <https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API>
 - <https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/webkitGetAsEntry>
+- <https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory>
