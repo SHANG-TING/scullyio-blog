@@ -177,9 +177,15 @@ document.getElementById("filepicker").addEventListener("change", function(event)
 <iframe id="webkitdirectory_example" src="https://yari-demos.prod.mdn.mozit.cloud/en-US/docs/Web/API/HTMLInputElement/webkitdirectory/_samples_/Example" loading="lazy"></iframe>
 
 
-### 心得
-
-  不在意 IE 的情況下，可以大膽同時使用第二、三種的上傳檔案方式，可以讓上傳功能更強大。
+### 簡單心得
+  
+  我們可以讓網站同時支援第二、三種的上傳檔案方式，讓上傳功能更加強大。
+  
+  另外有再寫 Angular 的朋友，我推薦我朋友 [Alan Zou](https://github.com/ZouYouShun) 所開發的 [ngxf-uploader](https://github.com/ZouYouShun/ngxf-uploader) (Angular Library)，最近它也即將支援`資料夾上傳`功能，可以查看 [PR: feat(ngxf-uploader): support folder upload](https://github.com/ZouYouShun/ngxf-uploader/pull/9)。
+  
+  我也非常榮幸可以提供想法給 Alan Zou。
+  
+  > 提醒一下，以上三種上傳方式都不支援 IE 瀏覽器喔！
 
 ## 參考資料
 
