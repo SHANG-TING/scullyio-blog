@@ -47,3 +47,6 @@ Thumbs.db
 
 # scully
 scully.log
+
+# git submodule
+projects/ngxf-uploader

@@ -141,7 +141,7 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/ngxf-uploader/ng-package.prod.json"
+              "project": "projects/ngxf-uploader/ng-package.json"
             }
           }
         },
