@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WSL2, zsh, windows terminal</title>
+    <base href="/">
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/base.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/components.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/utilities.min.css">
+  <link rel="stylesheet" href="styles.d9ca040271bbd858d1e1.css"><style></style><script charset="utf-8" src="4.e185201fd30f236e1c7a.js"></script><style>.smooth[_ngcontent-tmh-c8]{transition:box-shadow .3s ease-in-out}[_ngcontent-tmh-c8]::selection{background-color:#f0f8ff}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.1.1">
+    <app-root _nghost-tmh-c7="" ng-version="11.2.8"><router-outlet _ngcontent-tmh-c7=""></router-outlet><app-blog _nghost-tmh-c8="">
+<nav _ngcontent-tmh-c8="" class="bg-gray-900 p-4 mt-0 w-full">
+	<div _ngcontent-tmh-c8="" class="container mx-auto flex items-center">
+		<div _ngcontent-tmh-c8="" class="flex text-white font-extrabold">
+			<a _ngcontent-tmh-c8="" routerlink="/" class="flex text-white text-base no-underline hover:text-white hover:no-underline" href="/">
+				👻 <span _ngcontent-tmh-c8="" class="hidden w-0 md:w-auto md:block pl-1">Scullyio Blog</span>
+			</a>
+		</div>
+		<div _ngcontent-tmh-c8="" class="flex pl-4 text-sm">
+			<ul _ngcontent-tmh-c8="" class="list-reset flex justify-between flex-1 md:flex-none items-center">
+				<li _ngcontent-tmh-c8="" class="mr-2">
+					<a _ngcontent-tmh-c8="" href="index.html" class="inline-block py-2 px-2 text-white no-underline">POST</a>
+				</li>
+				<li _ngcontent-tmh-c8="" class="mr-2">
+					<a _ngcontent-tmh-c8="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2">ABOUT</a>
+				</li>
+				<li _ngcontent-tmh-c8="" class="mr-2">
+					<a _ngcontent-tmh-c8="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2">NOTE</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<div _ngcontent-tmh-c8="" class="bg-white fixed w-full z-10 top-0 hidden animated" style="opacity: 0.95;">
+	<div _ngcontent-tmh-c8="" class="bg-white">
+		<div _ngcontent-tmh-c8="" class="flex flex-wrap items-center content-center">
+			<div _ngcontent-tmh-c8="" class="flex w-1/2 justify-start text-white font-extrabold">
+				<a _ngcontent-tmh-c8="" href="#" class="flex text-gray-900 no-underline hover:text-gray-900 hover:no-underline pl-2">
+					👻
+					<span _ngcontent-tmh-c8="" class="hidden w-0 md:w-auto md:block pl-1">Scullyio Blog</span>
+				</a>
+			</div>
+			<div _ngcontent-tmh-c8="" class="flex w-1/2 justify-end content-center">
+				<p _ngcontent-tmh-c8="" class="hidden sm:block mr-3 text-center h-14 p-4 text-xs">
+					<span _ngcontent-tmh-c8="" class="pr-2">Share this</span> 👉
+				</p>
+				<a _ngcontent-tmh-c8="" class="inline-block text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" style="background-color: #33b1ff;" href="https://twitter.com/intent/tweet?url=http://localhost:1864/blog/wsl2_zsh_windows-terminal">
+					<svg _ngcontent-tmh-c8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="fill-current text-white h-4">
+						<path _ngcontent-tmh-c8="" d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+					</svg>
+				</a>
+				<a _ngcontent-tmh-c8="" class="inline-block text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" style="background-color: #005e99;" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1864/blog/wsl2_zsh_windows-terminal">
+					<svg _ngcontent-tmh-c8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="fill-current text-white h-4">
+						<path _ngcontent-tmh-c8="" d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+					</svg>
+				</a>
+			</div><!---->
+		</div>
+	</div>
+	
+	<div _ngcontent-tmh-c8="" class="h-1 bg-white shadow" style="background: linear-gradient(
+				to right,
+				#4dc0b5 var(--scroll),
+				transparent 0
+			);"></div>
+</div>
+
+
+<div _ngcontent-tmh-c8="" class="text-center pt-16 md:pt-32">
+	<p _ngcontent-tmh-c8="" class="text-sm md:text-base text-green-500 font-bold">
+		08 APRIL 2019 <span _ngcontent-tmh-c8="" class="text-gray-900">/</span> GETTING STARTED
+	</p>
+	<h1 _ngcontent-tmh-c8="" class="font-bold break-normal text-3xl md:text-5xl">
+		Welcome to Scullyio Blog
+	</h1>
+</div>
+
+
+<div _ngcontent-tmh-c8="" class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style="background-image: url('https://source.unsplash.com/collection/1118905/'); height: 75vh;"></div>
+
+
+<div _ngcontent-tmh-c8="" class="container max-w-5xl mx-auto -mt-32">
+	<div _ngcontent-tmh-c8="" class="mx-0 sm:mx-6">
+		<div _ngcontent-tmh-c8="" class="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style="font-family: Georgia, serif;">
+			
+
+			
+			<article _ngcontent-tmh-c8="" class="line-numbers prose prose-sm sm:prose lg:prose-lg">
+				<!--scullyContent-begin--><h1 id="wsl2-zsh-windows-terminal" _ngcontent-tmh-c8="">WSL2, zsh, windows terminal</h1>
+<h2 id="1-啟用-wsl" _ngcontent-tmh-c8="">1 啟用 WSL</h2>
+<h3 id="11-啟用-windows-子系統-linux-版" _ngcontent-tmh-c8="">1.1 啟用 Windows 子系統 Linux 版</h3>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">方法一<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8="">方法二
+<img src="https://i.imgur.com/WeDRDg7.png" alt="" _ngcontent-tmh-c8=""></li>
+</ul>
+<h2 id="2-升級到-wsl-2" _ngcontent-tmh-c8="">2 升級到 WSL 2</h2>
+<p _ngcontent-tmh-c8=""><strong _ngcontent-tmh-c8="">(PS.在開始前 你必須先將Win10更新到至少18917版)</strong></p>
+<h3 id="21-啟用虛擬機器功能" _ngcontent-tmh-c8="">2.1 啟用虛擬機器功能</h3>
+<p _ngcontent-tmh-c8=""><strong _ngcontent-tmh-c8="">以系統管理員開啟PowerShell</strong>
+輸入指令啟動虛擬機平台可選組件</p>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">方法一</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">方法二</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+</code></pre>
+<p _ngcontent-tmh-c8="">重新啟動您的電腦，以完成 WSL 安裝並更新至 WSL 2。</p>
+</li>
+</ul>
+<h3 id="22-下載-linux-核心更新套件" _ngcontent-tmh-c8="">2.2 下載 Linux 核心更新套件</h3>
+<ol _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">下載最新套件<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" _ngcontent-tmh-c8="">WSL2 Linux 核心更新套件 (適用於 x64 電腦)</a><blockquote _ngcontent-tmh-c8="">
+<p _ngcontent-tmh-c8="">如果您使用的是 ARM64 電腦，請改為下載 ARM64 套件。 如果您不確定您有何種類型的電腦，請開啟命令提示字元或 PowerShell，然後輸入：systeminfo | find "System Type"。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li _ngcontent-tmh-c8="">請執行在上一個步驟中下載的更新套件。 (按兩下以執行 - 系統會提示您提供更高的權限，請選取 [是] 以核准此安裝作業。)</li>
+</ol>
+<h3 id="23-將-wsl-2-設定為預設版本" _ngcontent-tmh-c8="">2.3 將 WSL 2 設定為預設版本</h3>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">設定預設版本</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">wsl --set-default-version 2
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">指定 WSL Distro 升級到 WSL 2 版本</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">wsl --set-version &lt;Distribution Name&gt; 2
+</code></pre>
+<blockquote _ngcontent-tmh-c8="">
+<p _ngcontent-tmh-c8="">接下來就等待系統轉換完成 需要一小段時間</p>
+</blockquote>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">列出目前已經安裝的 WSL Distro 版本（包含顯示執行狀態與 WSL 版本）</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">wsl -l -v
+</code></pre>
+<blockquote _ngcontent-tmh-c8="">
+<p _ngcontent-tmh-c8="">若VERSION顯示2代表轉換成功</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="24-安裝您選擇的-linux-發行版本" _ngcontent-tmh-c8="">2.4 安裝您選擇的 Linux 發行版本</h3>
+<p _ngcontent-tmh-c8="">開啟 <a href="https://aka.ms/wslstore" _ngcontent-tmh-c8="">Microsoft Store</a>，然後選取您最愛的 Linux 發行版本。</p>
+<p _ngcontent-tmh-c8="">安裝 <a href="https://www.microsoft.com/store/productId/9N6SVWS3RX71" _ngcontent-tmh-c8="">Ubuntu-20.04</a></p>
+<p _ngcontent-tmh-c8="">當您第一次啟動新安裝的 Linux 發行版本時，主控台視窗會隨即開啟，而系統會要求您等候一到兩分鐘，讓檔案解壓縮並儲存在您的電腦上。 未來的所有啟動時間都應該會低於一秒。</p>
+<p _ngcontent-tmh-c8="">接著，您必須為新的 Linux 發行版本設定使用者帳戶和密碼。</p>
+<h2 id="3-調整-shell-執行環境" _ngcontent-tmh-c8="">3 調整 Shell 執行環境</h2>
+<h3 id="31-建議先更新系統到最新版" _ngcontent-tmh-c8="">3.1 建議先更新系統到最新版</h3>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">sudo apt update &amp;&amp; sudo apt upgrade
+</code></pre>
+<h3 id="32-要用-git-版控，建議調整一下設定值" _ngcontent-tmh-c8="">3.2 要用 Git 版控，建議調整一下設定值</h3>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">一定要設定 <code _ngcontent-tmh-c8="">user.name</code> 與 <code _ngcontent-tmh-c8="">user.email</code> 資訊（請自行調整內容）</li>
+</ul>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">git config --global user.name Neil
+git config --global user.email lightup.neil@gmail.com
+</code></pre>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">常用設定（避免顯示亂碼）</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">git config --global core.editor vim
+git config --global core.autocrlf false
+git config --global core.quotepath false
+git config --global help.autocorrect 30
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+</code></pre>
+<blockquote _ngcontent-tmh-c8="">
+<p _ngcontent-tmh-c8="">如果出現所有檔案都是編輯狀態的話，解決方案<a href="https://github.com/microsoft/WSL/issues/184#issuecomment-209913528" _ngcontent-tmh-c8="">https://github.com/microsoft/WSL/issues/184#issuecomment-209913528</a></p>
+</blockquote>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">常用 alias 設定</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">git config --global alias.ci   commit
+git config --global alias.cm   "commit --amend -C HEAD"
+git config --global alias.co   checkout
+git config --global alias.st   status
+git config --global alias.sts  "status -s"
+git config --global alias.br   branch
+git config --global alias.re   remote
+git config --global alias.di   diff
+git config --global alias.type "cat-file -t"
+git config --global alias.dump "cat-file -p"
+git config --global alias.lo   "log --oneline"
+git config --global alias.ls   "log --show-signature"
+git config --global alias.ll   "log --pretty=format:'%h %ad | %s%d [%Cgreen%an%Creset]' --graph --date=short"
+git config --global alias.lg   "log --graph --pretty=format:'%Cred%h%Creset %ad |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset [%Cgreen%an%Creset]' --abbrev-commit --date=short"
+git config --global alias.alias "config --get-regexp ^alias\."
+git config --global alias.ignore '!'"gi() { curl -sL https://www.gitignore.io/api/\$@ ;}; gi"
+</code></pre>
+</li>
+</ul>
+<h3 id="33-安裝z-shell" _ngcontent-tmh-c8="">3.3 安裝Z Shell</h3>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">sudo apt-get install zsh
+</code></pre>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">確認shell清單裡是否有zsh<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">cat /etc/shells
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8="">找出zsh的安裝位置<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">which zsh
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8="">預設 zsh<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">chsh -s $(which zsh)
+</code></pre>
+</li>
+</ul>
+<h3 id="34-安裝-oh-my-zsh" _ngcontent-tmh-c8="">3.4 安裝 oh-my-zsh</h3>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+</code></pre>
+<h3 id="35-安裝-powerlevel10k-主題" _ngcontent-tmh-c8="">3.5 安裝 PowerLevel10k 主題</h3>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">clone 主題</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">修改 ~/.zshrc</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">激活 ~/.zshrc 設定</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">source ~/.zshrc
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">p10k 設定</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">p10k configure
+</code></pre>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">安裝字型</p>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><a href="https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf" _ngcontent-tmh-c8="">MesloLGS NF Regular.ttf</a></li>
+<li _ngcontent-tmh-c8=""><a href="https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf" _ngcontent-tmh-c8="">MesloLGS NF Bold.ttf</a></li>
+<li _ngcontent-tmh-c8=""><a href="https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf" _ngcontent-tmh-c8="">MesloLGS NF Italic.ttf</a></li>
+<li _ngcontent-tmh-c8=""><a href="https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf" _ngcontent-tmh-c8="">MesloLGS NF Bold Italic.ttf</a></li>
+</ul>
+</li>
+<li _ngcontent-tmh-c8=""><p _ngcontent-tmh-c8="">設定終端機使用新字型
+Windwos Terminal profiles.json 找到 wsl.exe 的設定後加上 fontFace 設定：</p>
+<pre _ngcontent-tmh-c8=""><code class="language-json" _ngcontent-tmh-c8="">"fontFace": "MesloLGS NF"
+</code></pre>
+</li>
+</ul>
+<h3 id="36-安裝-dircolors" _ngcontent-tmh-c8="">3.6 安裝 dircolors</h3>
+<p _ngcontent-tmh-c8=""><img src="https://i.imgur.com/rzzsGxg.png" alt="" _ngcontent-tmh-c8=""></p>
+<p _ngcontent-tmh-c8="">選擇你想要的主題，並下載文件到你的主目錄。</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
+</code></pre>
+<p _ngcontent-tmh-c8="">在zsh配置文件的底部添加一行以使用剛剛下載的內容。</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8=""># load dircolors
+eval `dircolors ~/.dircolors`
+</code></pre>
+<h3 id="37-安裝-plugins-of-oh-my-zsh" _ngcontent-tmh-c8="">3.7 安裝 Plugins of oh-my-zsh</h3>
+<h4 id="syntax-highlighting" _ngcontent-tmh-c8="">Syntax Highlighting</h4>
+<p _ngcontent-tmh-c8=""><img src="https://i.imgur.com/Zj1sv4h.png" alt="" _ngcontent-tmh-c8=""></p>
+<p _ngcontent-tmh-c8=""> clone <a href="https://github.com/zsh-users/zsh-syntax-highlighting.git" _ngcontent-tmh-c8="">Syntax Highlighting</a> and source the script:</p>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" &gt;&gt; ${ZDOTDIR:-$HOME}/.zshrc
+</code></pre>
+<h4 id="auto-suggestions" _ngcontent-tmh-c8="">Auto Suggestions</h4>
+<p _ngcontent-tmh-c8=""><img src="https://i.imgur.com/VeBNqlU.png" alt="" _ngcontent-tmh-c8=""></p>
+<ol _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">clone <a href="https://github.com/zsh-users/zsh-autosuggestions.git" _ngcontent-tmh-c8="">Auto Suggestions</a> 到 <code _ngcontent-tmh-c8="">$ZSH_CUSTOM/plugins</code> (預設 <code _ngcontent-tmh-c8="">~/.oh-my-zsh/custom/plugins</code>)</li>
+</ol>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+</code></pre>
+<ol start="2" _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">將 Auto Suggestions Plugin 加到 Oh My Zsh 的 Plugin 列表中 (在 <code _ngcontent-tmh-c8="">~/.zshrc</code>):</li>
+</ol>
+<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">plugins=(zsh-autosuggestions)
+</code></pre>
+<ol start="3" _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8="">激活 ~/.zshrc 設定<pre _ngcontent-tmh-c8=""><code class="language-shell=" _ngcontent-tmh-c8="">source ~/.zshrc
+</code></pre>
+</li>
+</ol>
+<h3 id="39-🔥-終端機-session-管理神器--tmux" _ngcontent-tmh-c8="">3.9 🔥 終端機 session 管理神器 — tmux</h3>
+<p _ngcontent-tmh-c8=""><strong _ngcontent-tmh-c8="">請參閱 →</strong> <a href="https://larrylu.blog/tmux-33a24e595fbc" _ngcontent-tmh-c8="">https://larrylu.blog/tmux-33a24e595fbc</a></p>
+<h2 id="4-安裝-windowsterminal-shell-工具" _ngcontent-tmh-c8="">4 安裝 windowsterminal-shell 工具</h2>
+<p _ngcontent-tmh-c8=""><strong _ngcontent-tmh-c8="">PowerShell Scripts to Install/Uninstall Context Menu Items for Windows Terminal</strong></p>
+<p _ngcontent-tmh-c8=""><img src="https://github.com/lextm/windowsterminal-shell/raw/master/default.png" alt="" _ngcontent-tmh-c8=""></p>
+<p _ngcontent-tmh-c8="">安裝方式請查看 <a href="https://github.com/lextm/windowsterminal-shell/blob/master/Readme.md" _ngcontent-tmh-c8="">Readme.md</a></p>
+<h2 id="5-透過檔案總管存取到-wsl-distro-內部檔案" _ngcontent-tmh-c8="">5 透過檔案總管存取到 WSL Distro 內部檔案</h2>
+<p _ngcontent-tmh-c8="">打開<code _ngcontent-tmh-c8="">檔案總管</code>並輸入以下路徑</p>
+<pre _ngcontent-tmh-c8=""><code _ngcontent-tmh-c8="">\\wsl$
+</code></pre>
+<p _ngcontent-tmh-c8=""><img src="https://i.imgur.com/OQGEma5.png" alt="" _ngcontent-tmh-c8=""></p>
+<h2 id="參考資料" _ngcontent-tmh-c8="">參考資料</h2>
+<ul _ngcontent-tmh-c8="">
+<li _ngcontent-tmh-c8=""><a href="https://docs.microsoft.com/zh-tw/windows/wsl/install-win10" _ngcontent-tmh-c8="">https://docs.microsoft.com/zh-tw/windows/wsl/install-win10</a></li>
+<li _ngcontent-tmh-c8=""><a href="https://blog.miniasp.com/post/2020/07/26/Multiple-Linux-Dev-Environment-build-on-WSL-2" _ngcontent-tmh-c8="">https://blog.miniasp.com/post/2020/07/26/Multiple-Linux-Dev-Environment-build-on-WSL-2</a></li>
+<li _ngcontent-tmh-c8=""><a href="https://nickymeuleman.netlify.app/blog/linux-on-windows-wsl2-zsh-docker#change-integrated-vscode-terminal" _ngcontent-tmh-c8="">https://nickymeuleman.netlify.app/blog/linux-on-windows-wsl2-zsh-docker#change-integrated-vscode-terminal</a></li>
+<li _ngcontent-tmh-c8=""><a href="http://jdev.tw/blog/6093/wsl2-oh-my-zsh-install-and-setup#header-**1" _ngcontent-tmh-c8="">http://jdev.tw/blog/6093/wsl2-oh-my-zsh-install-and-setup#header-**1</a>**</li>
+</ul>
+<!--scullyContent-end--><scully-content _ngcontent-tmh-c8=""></scully-content>
+			<script>try {window['scullyContent'] = {cssId:"_ngcontent-tmh-c8",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></article>
+
+			
+
+			
+		</div>
+
+		
+		<div _ngcontent-tmh-c8="" class="container font-sans bg-green-100 rounded mt-8 p-4 md:p-24 text-center">
+			<h2 _ngcontent-tmh-c8="" class="font-bold break-normal text-2xl md:text-4xl">
+				Subscribe to Scullyio Blog
+			</h2>
+			<h3 _ngcontent-tmh-c8="" class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">
+				Get the latest posts delivered right to your inbox
+			</h3>
+			<div _ngcontent-tmh-c8="" class="w-full text-center pt-4">
+				<form _ngcontent-tmh-c8="" action="#">
+					<div _ngcontent-tmh-c8="" class="max-w-sm mx-auto p-1 pr-0 flex flex-wrap items-center">
+						<input _ngcontent-tmh-c8="" type="email" placeholder="youremail@example.com" class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+						<button _ngcontent-tmh-c8="" type="submit" class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+							Subscribe
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+
+		
+		<div _ngcontent-tmh-c8="" class="flex w-full items-center font-sans p-8 md:p-24">
+			<img _ngcontent-tmh-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-10 h-10 rounded-full mr-4">
+			<div _ngcontent-tmh-c8="" class="flex-1">
+				<p _ngcontent-tmh-c8="" class="text-base font-bold text-base md:text-xl leading-none">
+					Scullyio Blog
+				</p>
+				<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-base">
+					
+				</p>
+			</div>
+			<div _ngcontent-tmh-c8="" class="justify-end">
+				<button _ngcontent-tmh-c8="" class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full">
+					Read More
+				</button>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div _ngcontent-tmh-c8="" class="bg-gray-200">
+	<div _ngcontent-tmh-c8="" class="container w-full max-w-6xl mx-auto px-2 py-8">
+		<div _ngcontent-tmh-c8="" class="flex flex-wrap -mx-2">
+			<div _ngcontent-tmh-c8="" class="w-full md:w-1/3 px-2 pb-12">
+				<div _ngcontent-tmh-c8="" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
+					<a _ngcontent-tmh-c8="" href="#" class="no-underline hover:no-underline">
+						<img _ngcontent-tmh-c8="" src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow-lg">
+						<div _ngcontent-tmh-c8="" class="p-6 h-auto md:h-48">
+							<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-sm">GETTING STARTED</p>
+							<div _ngcontent-tmh-c8="" class="font-bold text-xl text-gray-900">
+								Lorem ipsum dolor sit amet.
+							</div>
+							<p _ngcontent-tmh-c8="" class="text-gray-800 font-serif text-base mb-5">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+								at ipsum eu nunc commodo posuere et sit amet ligula.
+							</p>
+						</div>
+						<div _ngcontent-tmh-c8="" class="flex items-center justify-between inset-x-0 bottom-0 p-6">
+							<img _ngcontent-tmh-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-8 h-8 rounded-full mr-4">
+							<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-sm">2 MIN READ</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div _ngcontent-tmh-c8="" class="w-full md:w-1/3 px-2 pb-12">
+				<div _ngcontent-tmh-c8="" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
+					<a _ngcontent-tmh-c8="" href="#" class="no-underline hover:no-underline">
+						<img _ngcontent-tmh-c8="" src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow">
+						<div _ngcontent-tmh-c8="" class="p-6 h-auto md:h-48">
+							<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-sm">UNDERWATER</p>
+							<div _ngcontent-tmh-c8="" class="font-bold text-xl text-gray-900">
+								Biolumini algae diatomeae ecology.
+							</div>
+							<p _ngcontent-tmh-c8="" class="text-gray-800 font-serif text-base mb-5">
+								Lorem ipsum dolor sit. Aliquam at ipsum eu nunc commodo posuere
+								et sit amet ligula.
+							</p>
+						</div>
+						<div _ngcontent-tmh-c8="" class="flex items-center justify-between inset-x-0 bottom-0 p-6">
+							<img _ngcontent-tmh-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-8 h-8 rounded-full mr-4">
+							<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-sm">4 MIN READ</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div _ngcontent-tmh-c8="" class="w-full md:w-1/3 px-2 pb-12">
+				<div _ngcontent-tmh-c8="" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
+					<a _ngcontent-tmh-c8="" href="#" class="no-underline hover:no-underline">
+						<img _ngcontent-tmh-c8="" src="https://source.unsplash.com/DEa8_vxKlEo/400x200" class="h-48 w-full rounded-t shadow">
+						<div _ngcontent-tmh-c8="" class="p-6 h-auto md:h-48">
+							<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-sm">FOREST</p>
+							<div _ngcontent-tmh-c8="" class="font-bold text-xl text-gray-900">
+								What is life but a teardrop in the eye of infinity?
+							</div>
+							<p _ngcontent-tmh-c8="" class="text-gray-800 font-serif text-base mb-5">
+								Mollis pretium integer eros et dui orci, lectus nec elit
+								sagittis neque. Dignissim ac nullam semper aliquet volutpat, ut
+								scelerisque.
+							</p>
+						</div>
+						<div _ngcontent-tmh-c8="" class="flex items-center justify-between inset-x-0 bottom-0 p-6">
+							<img _ngcontent-tmh-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-8 h-8 rounded-full mr-4">
+							<p _ngcontent-tmh-c8="" class="text-gray-600 text-xs md:text-sm">7 MIN READ</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</app-blog><!----><footer _ngcontent-tmh-c7="" class="bg-gray-900"><div _ngcontent-tmh-c7="" class="container max-w-6xl mx-auto flex items-center px-2 py-8"><div _ngcontent-tmh-c7="" class="w-full mx-auto flex flex-wrap items-center"><div _ngcontent-tmh-c7="" class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold"><a _ngcontent-tmh-c7="" routerlink="/" class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/"> 👻 <span _ngcontent-tmh-c7="" class="text-base text-gray-200">Scullyio Blog</span></a></div><div _ngcontent-tmh-c7="" class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end"><ul _ngcontent-tmh-c7="" class="list-reset flex justify-center flex-1 md:flex-none items-center"><li _ngcontent-tmh-c7=""><a _ngcontent-tmh-c7="" href="#" class="inline-block py-2 px-3 text-white no-underline">Post</a></li><li _ngcontent-tmh-c7=""><a _ngcontent-tmh-c7="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3">About</a></li><li _ngcontent-tmh-c7=""><a _ngcontent-tmh-c7="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3">Note</a></li></ul></div></div></div></footer></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.3fda500eca2bde21aed3.js" defer=""></script><script src="polyfills.35dc60ceaab34d4cce76.js" defer=""></script><script src="main.0ae81bceea5e53e0d9b3.js" defer=""></script>
+
+</body></html>

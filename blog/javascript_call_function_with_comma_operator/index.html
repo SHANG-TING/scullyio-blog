@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>紀錄關於 comma operator 的使用觀念與技巧</title>
+    <base href="/">
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/base.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/components.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/utilities.min.css">
+  <link rel="stylesheet" href="styles.d9ca040271bbd858d1e1.css"><style></style><script charset="utf-8" src="4.e185201fd30f236e1c7a.js"></script><style>.smooth[_ngcontent-tyn-c8]{transition:box-shadow .3s ease-in-out}[_ngcontent-tyn-c8]::selection{background-color:#f0f8ff}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.1.1">
+    <app-root _nghost-tyn-c7="" ng-version="11.2.8"><router-outlet _ngcontent-tyn-c7=""></router-outlet><app-blog _nghost-tyn-c8="">
+<nav _ngcontent-tyn-c8="" class="bg-gray-900 p-4 mt-0 w-full">
+	<div _ngcontent-tyn-c8="" class="container mx-auto flex items-center">
+		<div _ngcontent-tyn-c8="" class="flex text-white font-extrabold">
+			<a _ngcontent-tyn-c8="" routerlink="/" class="flex text-white text-base no-underline hover:text-white hover:no-underline" href="/">
+				👻 <span _ngcontent-tyn-c8="" class="hidden w-0 md:w-auto md:block pl-1">Scullyio Blog</span>
+			</a>
+		</div>
+		<div _ngcontent-tyn-c8="" class="flex pl-4 text-sm">
+			<ul _ngcontent-tyn-c8="" class="list-reset flex justify-between flex-1 md:flex-none items-center">
+				<li _ngcontent-tyn-c8="" class="mr-2">
+					<a _ngcontent-tyn-c8="" href="index.html" class="inline-block py-2 px-2 text-white no-underline">POST</a>
+				</li>
+				<li _ngcontent-tyn-c8="" class="mr-2">
+					<a _ngcontent-tyn-c8="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2">ABOUT</a>
+				</li>
+				<li _ngcontent-tyn-c8="" class="mr-2">
+					<a _ngcontent-tyn-c8="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2">NOTE</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<div _ngcontent-tyn-c8="" class="bg-white fixed w-full z-10 top-0 hidden animated" style="opacity: 0.95;">
+	<div _ngcontent-tyn-c8="" class="bg-white">
+		<div _ngcontent-tyn-c8="" class="flex flex-wrap items-center content-center">
+			<div _ngcontent-tyn-c8="" class="flex w-1/2 justify-start text-white font-extrabold">
+				<a _ngcontent-tyn-c8="" href="#" class="flex text-gray-900 no-underline hover:text-gray-900 hover:no-underline pl-2">
+					👻
+					<span _ngcontent-tyn-c8="" class="hidden w-0 md:w-auto md:block pl-1">Scullyio Blog</span>
+				</a>
+			</div>
+			<div _ngcontent-tyn-c8="" class="flex w-1/2 justify-end content-center">
+				<p _ngcontent-tyn-c8="" class="hidden sm:block mr-3 text-center h-14 p-4 text-xs">
+					<span _ngcontent-tyn-c8="" class="pr-2">Share this</span> 👉
+				</p>
+				<a _ngcontent-tyn-c8="" class="inline-block text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" style="background-color: #33b1ff;" href="https://twitter.com/intent/tweet?url=http://localhost:1864/blog/javascript_call_function_with_comma_operator">
+					<svg _ngcontent-tyn-c8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="fill-current text-white h-4">
+						<path _ngcontent-tyn-c8="" d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
+					</svg>
+				</a>
+				<a _ngcontent-tyn-c8="" class="inline-block text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" style="background-color: #005e99;" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1864/blog/javascript_call_function_with_comma_operator">
+					<svg _ngcontent-tyn-c8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="fill-current text-white h-4">
+						<path _ngcontent-tyn-c8="" d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
+					</svg>
+				</a>
+			</div><!---->
+		</div>
+	</div>
+	
+	<div _ngcontent-tyn-c8="" class="h-1 bg-white shadow" style="background: linear-gradient(
+				to right,
+				#4dc0b5 var(--scroll),
+				transparent 0
+			);"></div>
+</div>
+
+
+<div _ngcontent-tyn-c8="" class="text-center pt-16 md:pt-32">
+	<p _ngcontent-tyn-c8="" class="text-sm md:text-base text-green-500 font-bold">
+		08 APRIL 2019 <span _ngcontent-tyn-c8="" class="text-gray-900">/</span> GETTING STARTED
+	</p>
+	<h1 _ngcontent-tyn-c8="" class="font-bold break-normal text-3xl md:text-5xl">
+		Welcome to Scullyio Blog
+	</h1>
+</div>
+
+
+<div _ngcontent-tyn-c8="" class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style="background-image: url('https://source.unsplash.com/collection/1118905/'); height: 75vh;"></div>
+
+
+<div _ngcontent-tyn-c8="" class="container max-w-5xl mx-auto -mt-32">
+	<div _ngcontent-tyn-c8="" class="mx-0 sm:mx-6">
+		<div _ngcontent-tyn-c8="" class="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style="font-family: Georgia, serif;">
+			
+
+			
+			<article _ngcontent-tyn-c8="" class="line-numbers prose prose-sm sm:prose lg:prose-lg">
+				<!--scullyContent-begin--><h1 id="紀錄關於-comma-operator-的使用觀念與技巧" _ngcontent-tyn-c8="">紀錄關於 comma operator 的使用觀念與技巧</h1>
+<h2 id="觀念" _ngcontent-tyn-c8="">觀念</h2>
+<p _ngcontent-tyn-c8="">對它的每個操作目標求值（從左至右），並回傳最後一個操作目標的值。</p>
+<pre _ngcontent-tyn-c8=""><code class="language-javascript" _ngcontent-tyn-c8="">function myFunc() {
+  let x = 0;
+
+  return (x += 1, x); // the same of return ++x;
+}
+
+myFunc(); // 1
+</code></pre>
+<h2 id="技巧一、簡化寫法" _ngcontent-tyn-c8="">技巧一、簡化寫法</h2>
+<p _ngcontent-tyn-c8="">可以透過 comma operator 簡化寫法</p>
+<pre _ngcontent-tyn-c8=""><code class="language-javascript" _ngcontent-tyn-c8="">let x = Promise.resolve(1);
+let y = Promise.resolve(2);
+
+// let z = x
+//   .then(x =&gt; x + 1)
+//   .then(async x =&gt; x + await y);
+
+let z = x
+  .then(async x =&gt; (x++, x + await y));
+
+await z; // 3
+</code></pre>
+<h2 id="技巧二、0-objpropargs" _ngcontent-tyn-c8="">技巧二、(0, obj.prop)(...args)</h2>
+<p _ngcontent-tyn-c8="">這個技巧的特別之處，透過 comma operator 的特性來讓 this 指向全局對象，也就是 window 或者 global。</p>
+<pre _ngcontent-tyn-c8=""><code class="language-javascript" _ngcontent-tyn-c8="">const neil = {
+  say(message) {
+    this.alert(message);
+  },
+  alert: console.log
+};
+
+// this === neil
+neil.say('Dr.D is god!');
+
+// this === window
+(0, neil.say)('Dr.D is god!');
+</code></pre>
+<p _ngcontent-tyn-c8=""><img src="https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.0-9/161408850_3727975163964467_2951647070574817289_n.jpg?_nc_cat=104&amp;ccb=1-3&amp;_nc_sid=dbeb18&amp;_nc_ohc=hRxmfrPtg-4AX-Zk7jm&amp;_nc_ht=scontent.ftpe8-4.fna&amp;oh=2d9636ea8eb0fe72dad035fd10ab731e&amp;oe=607EAB1C" alt="image" _ngcontent-tyn-c8=""></p>
+<blockquote _ngcontent-tyn-c8="">
+<p _ngcontent-tyn-c8="">建議還是使用 <code _ngcontent-tyn-c8="">function.call()/apply()</code> 來改變 this 的指向</p>
+</blockquote>
+<h2 id="參考資料" _ngcontent-tyn-c8="">參考資料</h2>
+<ul _ngcontent-tyn-c8="">
+<li _ngcontent-tyn-c8=""><a href="https://2ality.com/2015/12/references.html" _ngcontent-tyn-c8="">https://2ality.com/2015/12/references.html</a></li>
+</ul>
+<!--scullyContent-end--><scully-content _ngcontent-tyn-c8=""></scully-content>
+			<script>try {window['scullyContent'] = {cssId:"_ngcontent-tyn-c8",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></article>
+
+			
+
+			
+		</div>
+
+		
+		<div _ngcontent-tyn-c8="" class="container font-sans bg-green-100 rounded mt-8 p-4 md:p-24 text-center">
+			<h2 _ngcontent-tyn-c8="" class="font-bold break-normal text-2xl md:text-4xl">
+				Subscribe to Scullyio Blog
+			</h2>
+			<h3 _ngcontent-tyn-c8="" class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">
+				Get the latest posts delivered right to your inbox
+			</h3>
+			<div _ngcontent-tyn-c8="" class="w-full text-center pt-4">
+				<form _ngcontent-tyn-c8="" action="#">
+					<div _ngcontent-tyn-c8="" class="max-w-sm mx-auto p-1 pr-0 flex flex-wrap items-center">
+						<input _ngcontent-tyn-c8="" type="email" placeholder="youremail@example.com" class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+						<button _ngcontent-tyn-c8="" type="submit" class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">
+							Subscribe
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+
+		
+		<div _ngcontent-tyn-c8="" class="flex w-full items-center font-sans p-8 md:p-24">
+			<img _ngcontent-tyn-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-10 h-10 rounded-full mr-4">
+			<div _ngcontent-tyn-c8="" class="flex-1">
+				<p _ngcontent-tyn-c8="" class="text-base font-bold text-base md:text-xl leading-none">
+					Scullyio Blog
+				</p>
+				<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-base">
+					
+				</p>
+			</div>
+			<div _ngcontent-tyn-c8="" class="justify-end">
+				<button _ngcontent-tyn-c8="" class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full">
+					Read More
+				</button>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div _ngcontent-tyn-c8="" class="bg-gray-200">
+	<div _ngcontent-tyn-c8="" class="container w-full max-w-6xl mx-auto px-2 py-8">
+		<div _ngcontent-tyn-c8="" class="flex flex-wrap -mx-2">
+			<div _ngcontent-tyn-c8="" class="w-full md:w-1/3 px-2 pb-12">
+				<div _ngcontent-tyn-c8="" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
+					<a _ngcontent-tyn-c8="" href="#" class="no-underline hover:no-underline">
+						<img _ngcontent-tyn-c8="" src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow-lg">
+						<div _ngcontent-tyn-c8="" class="p-6 h-auto md:h-48">
+							<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-sm">GETTING STARTED</p>
+							<div _ngcontent-tyn-c8="" class="font-bold text-xl text-gray-900">
+								Lorem ipsum dolor sit amet.
+							</div>
+							<p _ngcontent-tyn-c8="" class="text-gray-800 font-serif text-base mb-5">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+								at ipsum eu nunc commodo posuere et sit amet ligula.
+							</p>
+						</div>
+						<div _ngcontent-tyn-c8="" class="flex items-center justify-between inset-x-0 bottom-0 p-6">
+							<img _ngcontent-tyn-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-8 h-8 rounded-full mr-4">
+							<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-sm">2 MIN READ</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div _ngcontent-tyn-c8="" class="w-full md:w-1/3 px-2 pb-12">
+				<div _ngcontent-tyn-c8="" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
+					<a _ngcontent-tyn-c8="" href="#" class="no-underline hover:no-underline">
+						<img _ngcontent-tyn-c8="" src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow">
+						<div _ngcontent-tyn-c8="" class="p-6 h-auto md:h-48">
+							<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-sm">UNDERWATER</p>
+							<div _ngcontent-tyn-c8="" class="font-bold text-xl text-gray-900">
+								Biolumini algae diatomeae ecology.
+							</div>
+							<p _ngcontent-tyn-c8="" class="text-gray-800 font-serif text-base mb-5">
+								Lorem ipsum dolor sit. Aliquam at ipsum eu nunc commodo posuere
+								et sit amet ligula.
+							</p>
+						</div>
+						<div _ngcontent-tyn-c8="" class="flex items-center justify-between inset-x-0 bottom-0 p-6">
+							<img _ngcontent-tyn-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-8 h-8 rounded-full mr-4">
+							<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-sm">4 MIN READ</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div _ngcontent-tyn-c8="" class="w-full md:w-1/3 px-2 pb-12">
+				<div _ngcontent-tyn-c8="" class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
+					<a _ngcontent-tyn-c8="" href="#" class="no-underline hover:no-underline">
+						<img _ngcontent-tyn-c8="" src="https://source.unsplash.com/DEa8_vxKlEo/400x200" class="h-48 w-full rounded-t shadow">
+						<div _ngcontent-tyn-c8="" class="p-6 h-auto md:h-48">
+							<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-sm">FOREST</p>
+							<div _ngcontent-tyn-c8="" class="font-bold text-xl text-gray-900">
+								What is life but a teardrop in the eye of infinity?
+							</div>
+							<p _ngcontent-tyn-c8="" class="text-gray-800 font-serif text-base mb-5">
+								Mollis pretium integer eros et dui orci, lectus nec elit
+								sagittis neque. Dignissim ac nullam semper aliquet volutpat, ut
+								scelerisque.
+							</p>
+						</div>
+						<div _ngcontent-tyn-c8="" class="flex items-center justify-between inset-x-0 bottom-0 p-6">
+							<img _ngcontent-tyn-c8="" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar of Author" class="w-8 h-8 rounded-full mr-4">
+							<p _ngcontent-tyn-c8="" class="text-gray-600 text-xs md:text-sm">7 MIN READ</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</app-blog><!----><footer _ngcontent-tyn-c7="" class="bg-gray-900"><div _ngcontent-tyn-c7="" class="container max-w-6xl mx-auto flex items-center px-2 py-8"><div _ngcontent-tyn-c7="" class="w-full mx-auto flex flex-wrap items-center"><div _ngcontent-tyn-c7="" class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold"><a _ngcontent-tyn-c7="" routerlink="/" class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="/"> 👻 <span _ngcontent-tyn-c7="" class="text-base text-gray-200">Scullyio Blog</span></a></div><div _ngcontent-tyn-c7="" class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end"><ul _ngcontent-tyn-c7="" class="list-reset flex justify-center flex-1 md:flex-none items-center"><li _ngcontent-tyn-c7=""><a _ngcontent-tyn-c7="" href="#" class="inline-block py-2 px-3 text-white no-underline">Post</a></li><li _ngcontent-tyn-c7=""><a _ngcontent-tyn-c7="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3">About</a></li><li _ngcontent-tyn-c7=""><a _ngcontent-tyn-c7="" href="#" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3">Note</a></li></ul></div></div></div></footer></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.3fda500eca2bde21aed3.js" defer=""></script><script src="polyfills.35dc60ceaab34d4cce76.js" defer=""></script><script src="main.0ae81bceea5e53e0d9b3.js" defer=""></script>
+
+</body></html>
